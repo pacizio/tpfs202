@@ -207,7 +207,7 @@
     <!-- NAVBAR -->
     <nav>
 
-        <h2>PHMR</h2>
+        <h2>Iyad Chentouf Portfolio</h2>
 
         <ul>
             <li><a href="#home">Home</a></li>
@@ -215,6 +215,7 @@
             <li><a href="#skills">Skills</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#contact">Contact</a></li>
+            <li><a href="modules.html">Modules</a></li>
         </ul>
 
     </nav>
@@ -225,7 +226,7 @@
 
         <div>
 
-            <h1>Hello, I'm <span>PHMR</span></h1>
+            <h1>Hello, I'm <span>Iyad Chentouf</span></h1>
 
             <p>Web Developer</p>
 
@@ -380,7 +381,7 @@
     <footer>
 
         <p>
-            © <?php echo date("Y"); ?> PHMR. All rights reserved.
+            © <?php echo date("Y"); ?> PACIZIO. All rights reserved.
         </p>
 
     </footer>

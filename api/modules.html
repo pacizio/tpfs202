@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Web Developer Portfolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            color: #222;
+        }
+
+        /* NAVBAR */
+        nav {
+            background: #111;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav h2 {
+            color: white;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        nav ul li a:hover {
+            color: #00aaff;
+        }
+
+/* Card Container */
+.card {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 30px;
+  width: 300px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  overflow: hidden; /* Clips the image corners to match the border-radius */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Hover Effect */
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+
+
+/* Body Content Wrapper */
+.card-body {
+  padding: 20px;
+
+}
+
+/* Title */
+.card-title {
+  margin: 0 0 10px 0;
+  font-size: 1.25rem;
+  color: #333333;
+}
+
+/* Description Text */
+.card-text {
+  margin: 0 0 20px 0;
+  font-size: 0.95rem;
+  color: #666666;
+  line-height: 1.5;
+}
+
+/* Action Button */
+.card-btn {
+  display: inline-block;
+  text-decoration: none;
+  background-color: #007bff;
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  text-align: center;
+  transition: background-color 0.2s ease;
+  position: fixed;
+            left: 0;
+            bottom: 0;
+
+}
+
+.card-btn:hover {
+  background-color: #0056b3;
+}
+.cards{
+    display: flex;
+}
+
+
+
+
+
+        /* FOOTER */
+        footer {
+            background: #111;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* MOBILE */
+        @media (max-width: 700px) {
+
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 12px;
+            }
+
+            #home h1 {
+                font-size: 35px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav>
+
+        <h2>Modules</h2>
+
+        <ul>
+            <li><a href="index.php">Home</a></li>
+            <li><a href="modules.html">Modules</a></li>
+        </ul>
+
+    </nav>
+
+<div class="cards">
+ <div class="card">
+  <div class="card-body">
+     <h3 class="card-title">M201</h3>
+     <p class="card-text">
+      Préparation d'un projet web
+     </p>
+     <a href="#" class="card-btn">Read More</a>
+  </div>
+ </div>
+
+ <div class="card">
+  <div class="card-body">
+     <h3 class="card-title">M202</h3>
+     <p class="card-text">
+      Approche agile
+     </p>
+     <a href="#" class="card-btn">Read More</a>
+  </div>
+ </div>
+
+ <div class="card">
+  <div class="card-body">
+     <h3 class="card-title">M203</h3>
+     <p class="card-text">
+      Gestion des données
+     </p>
+     <a href="#" class="card-btn">Read More</a>
+  </div>
+ </div>
+
+ <div class="card">
+  <div class="card-body">
+     <h3 class="card-title">M204</h3>
+     <p class="card-text">
+      M204: Développement front-end
+     </p>
+     <a href="#" class="card-btn">Read More</a>
+  </div>
+ </div>
+
+ <div class="card">
+  <div class="card-body">
+     <h3 class="card-title">M205</h3>
+     <p class="card-text">
+      Développement back-end
+     </p>
+     <a href="#" class="card-btn">Read More</a>
+  </div>
+ </div>
+
+ <div class="card">
+  <div class="card-body">
+     <h3 class="card-title">M206</h3>
+     <p class="card-text">
+      Création d'une application Cloud native
+     </p>
+     <a href="#" class="card-btn">Read More</a>
+  </div>
+ </div>
+
+ <div class="card">
+  <div class="card-body">
+     <h3 class="card-title">M207</h3>
+     <p class="card-text">
+      Projet de synthèse
+     </p>
+     <a href="#" class="card-btn">Read More</a>
+  </div>
+ </div>
+ </div>
+
+
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <p>
+            © <?php echo date("Y"); ?> PACIZIO. All rights reserved.
+        </p>
+
+    </footer>
+
+</body>
+</html>
