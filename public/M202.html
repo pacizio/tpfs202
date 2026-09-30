@@ -1,10 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Modules | Web Developer Portfolio</title>
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Atelier | Web Developer Portfolio</title>
+
 
     <style>
 
@@ -18,6 +23,7 @@
             box-sizing: border-box;
             scroll-behavior: smooth;
         }
+
 
         :root {
             --bg: #080b12;
@@ -39,6 +45,7 @@
         ========================= */
 
         body {
+
             font-family: Arial, sans-serif;
 
             background:
@@ -62,28 +69,36 @@
         ========================= */
 
         nav {
+
             width: 100%;
 
             padding: 18px 8%;
 
             display: flex;
+
             justify-content: space-between;
+
             align-items: center;
 
             position: sticky;
+
             top: 0;
+
             z-index: 1000;
 
             background: rgba(8, 11, 18, 0.75);
 
             backdrop-filter: blur(15px);
+
             -webkit-backdrop-filter: blur(15px);
 
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            border-bottom:
+                1px solid rgba(255, 255, 255, 0.08);
         }
 
 
         nav h2 {
+
             color: white;
 
             font-size: 22px;
@@ -95,11 +110,13 @@
 
 
         nav h2::first-letter {
+
             color: var(--blue);
         }
 
 
         nav ul {
+
             display: flex;
 
             list-style: none;
@@ -109,6 +126,7 @@
 
 
         nav ul li a {
+
             position: relative;
 
             color: #dce3ec;
@@ -124,14 +142,17 @@
 
 
         nav ul li a::after {
+
             content: "";
 
             position: absolute;
 
             left: 0;
+
             bottom: -7px;
 
             width: 0;
+
             height: 2px;
 
             background: var(--blue);
@@ -141,27 +162,41 @@
 
 
         nav ul li a:hover {
+
             color: var(--blue);
         }
 
 
         nav ul li a:hover::after {
+
             width: 100%;
         }
 
 
         /* =========================
-           MODULES SECTION
+           MAIN
         ========================= */
 
-        .modules-section {
+        main {
+
             min-height: calc(100vh - 80px);
 
             padding: 80px 8% 120px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
         }
 
 
-        .modules-title {
+        /* =========================
+           PAGE TITLE
+        ========================= */
+
+        .page-title {
+
             text-align: center;
 
             font-size: 42px;
@@ -172,37 +207,31 @@
         }
 
 
-        .modules-title span {
+        .page-title span {
+
             color: var(--blue);
 
-            background: linear-gradient(
-                90deg,
-                #00aaff,
-                #0077ff
-            );
+            background:
+                linear-gradient(
+                    90deg,
+                    #00aaff,
+                    #0077ff
+                );
 
             -webkit-background-clip: text;
+
             -webkit-text-fill-color: transparent;
         }
 
 
-        .modules-subtitle {
-            text-align: center;
+        .page-title::after {
 
-            color: var(--text-light);
-
-            font-size: 17px;
-
-            margin-bottom: 55px;
-        }
-
-
-        .modules-title::after {
             content: "";
 
             display: block;
 
             width: 50px;
+
             height: 3px;
 
             background: var(--blue);
@@ -213,21 +242,37 @@
         }
 
 
+        .page-subtitle {
+
+            color: var(--text-light);
+
+            font-size: 17px;
+
+            text-align: center;
+
+            margin-bottom: 55px;
+        }
+
+
         /* =========================
-           CARDS CONTAINER
+           CARDS
         ========================= */
 
         .cards {
-            max-width: 1200px;
 
-            margin: auto;
+            width: 100%;
 
-            display: grid;
+            max-width: 1100px;
 
-            grid-template-columns:
-                repeat(auto-fit, minmax(250px, 1fr));
+            display: flex;
+
+            justify-content: center;
+
+            align-items: stretch;
 
             gap: 25px;
+
+            flex-wrap: wrap;
         }
 
 
@@ -236,23 +281,24 @@
         ========================= */
 
         .card {
+
             position: relative;
 
-            min-height: 240px;
+            width: 330px;
 
-            display: flex;
-
-            flex-direction: column;
+            min-height: 250px;
 
             background: var(--card);
 
-            border: 1px solid var(--border);
+            border:
+                1px solid var(--border);
 
             border-radius: 15px;
 
             overflow: hidden;
 
             backdrop-filter: blur(12px);
+
             -webkit-backdrop-filter: blur(12px);
 
             transition:
@@ -262,24 +308,28 @@
         }
 
 
-        /* Blue glow at top of card */
+        /* Blue line */
 
         .card::before {
+
             content: "";
 
             position: absolute;
 
             top: 0;
+
             left: 0;
 
             width: 100%;
+
             height: 3px;
 
-            background: linear-gradient(
-                90deg,
-                var(--blue),
-                var(--blue-dark)
-            );
+            background:
+                linear-gradient(
+                    90deg,
+                    var(--blue),
+                    var(--blue-dark)
+                );
 
             opacity: 0;
 
@@ -288,9 +338,11 @@
 
 
         .card:hover {
+
             transform: translateY(-8px);
 
-            border-color: rgba(0, 170, 255, 0.4);
+            border-color:
+                rgba(0, 170, 255, 0.4);
 
             box-shadow:
                 0 15px 40px rgba(0, 0, 0, 0.35),
@@ -299,6 +351,7 @@
 
 
         .card:hover::before {
+
             opacity: 1;
         }
 
@@ -308,22 +361,24 @@
         ========================= */
 
         .card-body {
-            padding: 28px;
+
+            padding: 30px;
+
+            min-height: 250px;
 
             display: flex;
 
             flex-direction: column;
-
-            flex: 1;
         }
 
 
         /* =========================
-           MODULE NUMBER
+           CARD TITLE
         ========================= */
 
         .card-title {
-            margin: 0 0 15px 0;
+
+            margin-bottom: 15px;
 
             font-size: 24px;
 
@@ -334,16 +389,18 @@
 
 
         .card-title::first-letter {
+
             color: var(--blue);
         }
 
 
         /* =========================
-           DESCRIPTION
+           CARD TEXT
         ========================= */
 
         .card-text {
-            margin: 0 0 25px 0;
+
+            margin-bottom: 25px;
 
             font-size: 15px;
 
@@ -360,21 +417,23 @@
         ========================= */
 
         .card-btn {
+
             display: inline-block;
 
             width: fit-content;
 
             text-decoration: none;
 
-            background: linear-gradient(
-                135deg,
-                var(--blue),
-                var(--blue-dark)
-            );
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--blue),
+                    var(--blue-dark)
+                );
 
             color: white;
 
-            padding: 10px 20px;
+            padding: 10px 22px;
 
             border-radius: 7px;
 
@@ -385,15 +444,18 @@
             transition: 0.3s ease;
 
             box-shadow:
-                0 5px 15px rgba(0, 136, 255, 0.15);
+                0 5px 15px
+                rgba(0, 136, 255, 0.15);
         }
 
 
         .card-btn:hover {
+
             transform: translateY(-3px);
 
             box-shadow:
-                0 8px 25px rgba(0, 136, 255, 0.3);
+                0 8px 25px
+                rgba(0, 136, 255, 0.3);
         }
 
 
@@ -402,6 +464,7 @@
         ========================= */
 
         footer {
+
             background: #05070b;
 
             color: #8c96a5;
@@ -410,7 +473,8 @@
 
             padding: 25px;
 
-            border-top: 1px solid var(--border);
+            border-top:
+                1px solid var(--border);
 
             font-size: 14px;
         }
@@ -421,16 +485,19 @@
         ========================= */
 
         ::-webkit-scrollbar {
+
             width: 8px;
         }
 
 
         ::-webkit-scrollbar-track {
+
             background: var(--bg);
         }
 
 
         ::-webkit-scrollbar-thumb {
+
             background: #263244;
 
             border-radius: 10px;
@@ -438,6 +505,7 @@
 
 
         ::-webkit-scrollbar-thumb:hover {
+
             background: var(--blue);
         }
 
@@ -449,6 +517,7 @@
         @media (max-width: 700px) {
 
             nav {
+
                 flex-direction: column;
 
                 gap: 15px;
@@ -458,51 +527,55 @@
 
 
             nav h2 {
+
                 font-size: 19px;
             }
 
 
             nav ul {
+
                 gap: 18px;
             }
 
 
             nav ul li a {
+
                 font-size: 14px;
             }
 
 
-            .modules-section {
-                padding: 60px 5% 100px;
+            main {
+
+                padding:
+                    60px 5% 100px;
             }
 
 
-            .modules-title {
+            .page-title {
+
                 font-size: 34px;
             }
 
 
-            .modules-subtitle {
+            .page-subtitle {
+
                 font-size: 15px;
 
                 margin-bottom: 40px;
             }
 
 
-            .cards {
-                grid-template-columns: 1fr;
-
-                gap: 20px;
-            }
-
-
             .card {
-                min-height: 220px;
+
+                width: 100%;
+
+                max-width: 400px;
             }
 
         }
 
     </style>
+
 </head>
 
 
@@ -515,7 +588,7 @@
 
     <nav>
 
-        <h2>Modules</h2>
+        <h2>Atelier</h2>
 
         <ul>
 
@@ -537,208 +610,59 @@
 
 
     <!-- =========================
-         MODULES
+         MAIN CONTENT
     ========================= -->
 
-    <section class="modules-section">
+    <main>
 
-        <h1 class="modules-title">
-            My <span>Modules</span>
+        <h1 class="page-title">
+            Mon <span>Atelier</span>
         </h1>
 
-        <p class="modules-subtitle">
-            My web development training modules and projects
+
+        <p class="page-subtitle">
+            Projects and practical work completed during my training
         </p>
 
 
         <div class="cards">
 
 
-            <!-- M201 -->
+            <!-- ATELIER 1 -->
 
             <div class="card">
 
                 <div class="card-body">
 
                     <h3 class="card-title">
-                        M201
+                        Atelier 1
                     </h3>
 
+
                     <p class="card-text">
-                        Préparation d'un projet web
+                        Gestion de projet : Méthodes classiques
                     </p>
 
+
                     <a
-                        href="M201.html"
+                        href="Atelier 1.pdf"
                         class="card-btn"
+                        target="_blank"
                     >
-                        Read More
+                        Open
                     </a>
 
                 </div>
 
             </div>
 
-
-            <!-- M202 -->
-
-            <div class="card">
-
-                <div class="card-body">
-
-                    <h3 class="card-title">
-                        M202
-                    </h3>
-
-                    <p class="card-text">
-                        Approche agile
-                    </p>
-
-                    <a
-                        href="M202.html"
-                        class="card-btn"
-                    >
-                        Read More
-                    </a>
-
-                </div>
-
-            </div>
-
-
-            <!-- M203 -->
-
-            <div class="card">
-
-                <div class="card-body">
-
-                    <h3 class="card-title">
-                        M203
-                    </h3>
-
-                    <p class="card-text">
-                        Gestion des données
-                    </p>
-
-                    <a
-                        href="#"
-                        class="card-btn"
-                    >
-                        Read More
-                    </a>
-
-                </div>
-
-            </div>
-
-
-            <!-- M204 -->
-
-            <div class="card">
-
-                <div class="card-body">
-
-                    <h3 class="card-title">
-                        M204
-                    </h3>
-
-                    <p class="card-text">
-                        Développement front-end
-                    </p>
-
-                    <a
-                        href="#"
-                        class="card-btn"
-                    >
-                        Read More
-                    </a>
-
-                </div>
-
-            </div>
-
-
-            <!-- M205 -->
-
-            <div class="card">
-
-                <div class="card-body">
-
-                    <h3 class="card-title">
-                        M205
-                    </h3>
-
-                    <p class="card-text">
-                        Développement back-end
-                    </p>
-
-                    <a
-                        href="#"
-                        class="card-btn"
-                    >
-                        Read More
-                    </a>
-
-                </div>
-
-            </div>
-
-
-            <!-- M206 -->
-
-            <div class="card">
-
-                <div class="card-body">
-
-                    <h3 class="card-title">
-                        M206
-                    </h3>
-
-                    <p class="card-text">
-                        Création d'une application Cloud native
-                    </p>
-
-                    <a
-                        href="#"
-                        class="card-btn"
-                    >
-                        Read More
-                    </a>
-
-                </div>
-
-            </div>
-
-
-            <!-- M207 -->
-
-            <div class="card">
-
-                <div class="card-body">
-
-                    <h3 class="card-title">
-                        M207
-                    </h3>
-
-                    <p class="card-text">
-                        Projet de synthèse
-                    </p>
-
-                    <a
-                        href="#"
-                        class="card-btn"
-                    >
-                        Read More
-                    </a>
-
-                </div>
-
-            </div>
+        
+            
 
 
         </div>
 
-    </section>
+    </main>
 
 
     <!-- =========================
@@ -756,4 +680,5 @@
 
 
 </body>
+
 </html>
