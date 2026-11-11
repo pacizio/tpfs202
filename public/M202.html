@@ -1,831 +1,622 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
 
-<head>
-
-    <meta charset="UTF-8">
-
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Atelier | Web Developer Portfolio</title>
 
-
     <style>
-
-        /* =========================
+      /* =========================
            RESET
         ========================= */
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        scroll-behavior: smooth;
+      }
 
+      :root {
+        --bg: #080b12;
+        --bg-light: #0f1420;
 
-        :root {
-            --bg: #080b12;
-            --bg-light: #0f1420;
+        --card: rgba(255, 255, 255, 0.06);
+        --border: rgba(255, 255, 255, 0.1);
 
-            --card: rgba(255, 255, 255, 0.06);
-            --border: rgba(255, 255, 255, 0.10);
+        --text: #f5f7fa;
+        --text-light: #aab3c2;
 
-            --text: #f5f7fa;
-            --text-light: #aab3c2;
+        --blue: #00aaff;
+        --blue-dark: #0077ff;
+      }
 
-            --blue: #00aaff;
-            --blue-dark: #0077ff;
-        }
-
-
-        /* =========================
+      /* =========================
            BODY
         ========================= */
 
-        body {
+      body {
+        font-family: Arial, sans-serif;
 
-            font-family: Arial, sans-serif;
+        background:
+          radial-gradient(
+            circle at 50% 20%,
+            rgba(0, 170, 255, 0.08),
+            transparent 35%
+          ),
+          var(--bg);
 
-            background:
-                radial-gradient(
-                    circle at 50% 20%,
-                    rgba(0, 170, 255, 0.08),
-                    transparent 35%
-                ),
-                var(--bg);
+        color: var(--text);
 
-            color: var(--text);
+        min-height: 100vh;
 
-            min-height: 100vh;
+        overflow-x: hidden;
+      }
 
-            overflow-x: hidden;
-        }
-
-
-        /* =========================
+      /* =========================
            NAVBAR
         ========================= */
 
-        nav {
+      nav {
+        width: 100%;
 
-            width: 100%;
+        padding: 18px 8%;
 
-            padding: 18px 8%;
+        display: flex;
 
-            display: flex;
+        justify-content: space-between;
 
-            justify-content: space-between;
+        align-items: center;
 
-            align-items: center;
+        position: sticky;
 
-            position: sticky;
+        top: 0;
 
-            top: 0;
+        z-index: 1000;
 
-            z-index: 1000;
+        background: rgba(8, 11, 18, 0.75);
 
-            background: rgba(8, 11, 18, 0.75);
+        backdrop-filter: blur(15px);
 
-            backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
 
-            -webkit-backdrop-filter: blur(15px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      }
 
-            border-bottom:
-                1px solid rgba(255, 255, 255, 0.08);
-        }
+      nav h2 {
+        color: white;
 
+        font-size: 22px;
 
-        nav h2 {
+        font-weight: 700;
 
-            color: white;
+        letter-spacing: 0.5px;
+      }
 
-            font-size: 22px;
+      nav h2::first-letter {
+        color: var(--blue);
+      }
 
-            font-weight: 700;
+      nav ul {
+        display: flex;
 
-            letter-spacing: 0.5px;
-        }
+        list-style: none;
 
+        gap: 30px;
+      }
 
-        nav h2::first-letter {
+      nav ul li a {
+        position: relative;
 
-            color: var(--blue);
-        }
+        color: #dce3ec;
 
+        text-decoration: none;
 
-        nav ul {
+        font-size: 15px;
 
-            display: flex;
+        font-weight: 500;
 
-            list-style: none;
+        transition: 0.3s ease;
+      }
 
-            gap: 30px;
-        }
+      nav ul li a::after {
+        content: "";
 
+        position: absolute;
 
-        nav ul li a {
+        left: 0;
 
-            position: relative;
+        bottom: -7px;
 
-            color: #dce3ec;
+        width: 0;
 
-            text-decoration: none;
+        height: 2px;
 
-            font-size: 15px;
+        background: var(--blue);
 
-            font-weight: 500;
+        transition: 0.3s ease;
+      }
 
-            transition: 0.3s ease;
-        }
+      nav ul li a:hover {
+        color: var(--blue);
+      }
 
+      nav ul li a:hover::after {
+        width: 100%;
+      }
 
-        nav ul li a::after {
-
-            content: "";
-
-            position: absolute;
-
-            left: 0;
-
-            bottom: -7px;
-
-            width: 0;
-
-            height: 2px;
-
-            background: var(--blue);
-
-            transition: 0.3s ease;
-        }
-
-
-        nav ul li a:hover {
-
-            color: var(--blue);
-        }
-
-
-        nav ul li a:hover::after {
-
-            width: 100%;
-        }
-
-
-        /* =========================
+      /* =========================
            MAIN
         ========================= */
 
-        main {
+      main {
+        min-height: calc(100vh - 80px);
 
-            min-height: calc(100vh - 80px);
+        padding: 80px 8% 120px;
 
-            padding: 80px 8% 120px;
+        display: flex;
 
-            display: flex;
+        flex-direction: column;
 
-            flex-direction: column;
+        align-items: center;
+      }
 
-            align-items: center;
-        }
-
-
-        /* =========================
+      /* =========================
            PAGE TITLE
         ========================= */
 
-        .page-title {
+      .page-title {
+        text-align: center;
 
-            text-align: center;
+        font-size: 42px;
 
-            font-size: 42px;
+        margin-bottom: 15px;
 
-            margin-bottom: 15px;
+        font-weight: 700;
+      }
 
-            font-weight: 700;
-        }
+      .page-title span {
+        color: var(--blue);
 
+        background: linear-gradient(90deg, #00aaff, #0077ff);
 
-        .page-title span {
+        -webkit-background-clip: text;
 
-            color: var(--blue);
+        -webkit-text-fill-color: transparent;
+      }
 
-            background:
-                linear-gradient(
-                    90deg,
-                    #00aaff,
-                    #0077ff
-                );
+      .page-title::after {
+        content: "";
 
-            -webkit-background-clip: text;
+        display: block;
 
-            -webkit-text-fill-color: transparent;
-        }
+        width: 50px;
 
+        height: 3px;
 
-        .page-title::after {
+        background: var(--blue);
 
-            content: "";
+        margin: 15px auto 0;
 
-            display: block;
+        border-radius: 10px;
+      }
 
-            width: 50px;
+      .page-subtitle {
+        color: var(--text-light);
 
-            height: 3px;
+        font-size: 17px;
 
-            background: var(--blue);
+        text-align: center;
 
-            margin: 15px auto 0;
+        margin-bottom: 55px;
+      }
 
-            border-radius: 10px;
-        }
-
-
-        .page-subtitle {
-
-            color: var(--text-light);
-
-            font-size: 17px;
-
-            text-align: center;
-
-            margin-bottom: 55px;
-        }
-
-
-        /* =========================
+      /* =========================
            CARDS
         ========================= */
 
-        .cards {
+      .cards {
+        width: 100%;
 
-            width: 100%;
+        max-width: 1100px;
 
-            max-width: 1100px;
+        display: flex;
 
-            display: flex;
+        justify-content: center;
 
-            justify-content: center;
+        align-items: stretch;
 
-            align-items: stretch;
+        gap: 25px;
 
-            gap: 25px;
+        flex-wrap: wrap;
+      }
 
-            flex-wrap: wrap;
-        }
-
-
-        /* =========================
+      /* =========================
            CARD
         ========================= */
 
-        .card {
+      .card {
+        position: relative;
 
-            position: relative;
+        width: 330px;
 
-            width: 330px;
+        min-height: 250px;
 
-            min-height: 250px;
+        background: var(--card);
 
-            background: var(--card);
+        border: 1px solid var(--border);
 
-            border:
-                1px solid var(--border);
+        border-radius: 15px;
 
-            border-radius: 15px;
+        overflow: hidden;
 
-            overflow: hidden;
+        backdrop-filter: blur(12px);
 
-            backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
 
-            -webkit-backdrop-filter: blur(12px);
+        transition:
+          transform 0.3s ease,
+          border-color 0.3s ease,
+          box-shadow 0.3s ease;
+      }
 
-            transition:
-                transform 0.3s ease,
-                border-color 0.3s ease,
-                box-shadow 0.3s ease;
-        }
+      /* Blue line */
 
+      .card::before {
+        content: "";
 
-        /* Blue line */
+        position: absolute;
 
-        .card::before {
+        top: 0;
 
-            content: "";
+        left: 0;
 
-            position: absolute;
+        width: 100%;
 
-            top: 0;
+        height: 3px;
 
-            left: 0;
+        background: linear-gradient(90deg, var(--blue), var(--blue-dark));
 
-            width: 100%;
+        opacity: 0;
 
-            height: 3px;
+        transition: 0.3s ease;
+      }
 
-            background:
-                linear-gradient(
-                    90deg,
-                    var(--blue),
-                    var(--blue-dark)
-                );
+      .card:hover {
+        transform: translateY(-8px);
 
-            opacity: 0;
+        border-color: rgba(0, 170, 255, 0.4);
 
-            transition: 0.3s ease;
-        }
+        box-shadow:
+          0 15px 40px rgba(0, 0, 0, 0.35),
+          0 0 25px rgba(0, 170, 255, 0.08);
+      }
 
+      .card:hover::before {
+        opacity: 1;
+      }
 
-        .card:hover {
-
-            transform: translateY(-8px);
-
-            border-color:
-                rgba(0, 170, 255, 0.4);
-
-            box-shadow:
-                0 15px 40px rgba(0, 0, 0, 0.35),
-                0 0 25px rgba(0, 170, 255, 0.08);
-        }
-
-
-        .card:hover::before {
-
-            opacity: 1;
-        }
-
-
-        /* =========================
+      /* =========================
            CARD BODY
         ========================= */
 
-        .card-body {
+      .card-body {
+        padding: 30px;
 
-            padding: 30px;
+        min-height: 250px;
 
-            min-height: 250px;
+        display: flex;
 
-            display: flex;
+        flex-direction: column;
+      }
 
-            flex-direction: column;
-        }
-
-
-        /* =========================
+      /* =========================
            CARD TITLE
         ========================= */
 
-        .card-title {
+      .card-title {
+        margin-bottom: 15px;
 
-            margin-bottom: 15px;
+        font-size: 24px;
 
-            font-size: 24px;
+        color: white;
 
-            color: white;
+        font-weight: 700;
+      }
 
-            font-weight: 700;
-        }
+      .card-title::first-letter {
+        color: var(--blue);
+      }
 
-
-        .card-title::first-letter {
-
-            color: var(--blue);
-        }
-
-
-        /* =========================
+      /* =========================
            CARD TEXT
         ========================= */
 
-        .card-text {
+      .card-text {
+        margin-bottom: 25px;
 
-            margin-bottom: 25px;
+        font-size: 15px;
 
-            font-size: 15px;
+        color: var(--text-light);
 
-            color: var(--text-light);
+        line-height: 1.6;
 
-            line-height: 1.6;
+        flex: 1;
+      }
 
-            flex: 1;
-        }
-
-
-        /* =========================
+      /* =========================
            BUTTON
         ========================= */
 
-        .card-btn {
+      .card-btn {
+        display: inline-block;
 
-            display: inline-block;
+        width: fit-content;
 
-            width: fit-content;
+        text-decoration: none;
 
-            text-decoration: none;
+        background: linear-gradient(135deg, var(--blue), var(--blue-dark));
 
-            background:
-                linear-gradient(
-                    135deg,
-                    var(--blue),
-                    var(--blue-dark)
-                );
+        color: white;
 
-            color: white;
+        padding: 10px 22px;
 
-            padding: 10px 22px;
+        border-radius: 7px;
 
-            border-radius: 7px;
+        font-size: 14px;
 
-            font-size: 14px;
+        font-weight: 600;
 
-            font-weight: 600;
+        transition: 0.3s ease;
 
-            transition: 0.3s ease;
+        box-shadow: 0 5px 15px rgba(0, 136, 255, 0.15);
+      }
 
-            box-shadow:
-                0 5px 15px
-                rgba(0, 136, 255, 0.15);
-        }
+      .card-btn:hover {
+        transform: translateY(-3px);
 
+        box-shadow: 0 8px 25px rgba(0, 136, 255, 0.3);
+      }
 
-        .card-btn:hover {
-
-            transform: translateY(-3px);
-
-            box-shadow:
-                0 8px 25px
-                rgba(0, 136, 255, 0.3);
-        }
-
-
-        /* =========================
+      /* =========================
            FOOTER
         ========================= */
 
-        footer {
+      footer {
+        background: #05070b;
 
-            background: #05070b;
+        color: #8c96a5;
 
-            color: #8c96a5;
+        text-align: center;
 
-            text-align: center;
+        padding: 25px;
 
-            padding: 25px;
+        border-top: 1px solid var(--border);
 
-            border-top:
-                1px solid var(--border);
+        font-size: 14px;
+      }
 
-            font-size: 14px;
-        }
-
-
-        /* =========================
+      /* =========================
            SCROLLBAR
         ========================= */
 
-        ::-webkit-scrollbar {
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
 
-            width: 8px;
-        }
+      ::-webkit-scrollbar-track {
+        background: var(--bg);
+      }
 
+      ::-webkit-scrollbar-thumb {
+        background: #263244;
 
-        ::-webkit-scrollbar-track {
+        border-radius: 10px;
+      }
 
-            background: var(--bg);
-        }
+      ::-webkit-scrollbar-thumb:hover {
+        background: var(--blue);
+      }
 
-
-        ::-webkit-scrollbar-thumb {
-
-            background: #263244;
-
-            border-radius: 10px;
-        }
-
-
-        ::-webkit-scrollbar-thumb:hover {
-
-            background: var(--blue);
-        }
-
-
-        /* =========================
+      /* =========================
            MOBILE
         ========================= */
 
-        @media (max-width: 700px) {
+      @media (max-width: 700px) {
+        nav {
+          flex-direction: column;
 
-            nav {
+          gap: 15px;
 
-                flex-direction: column;
-
-                gap: 15px;
-
-                padding: 18px 5%;
-            }
-
-
-            nav h2 {
-
-                font-size: 19px;
-            }
-
-
-            nav ul {
-
-                gap: 18px;
-            }
-
-
-            nav ul li a {
-
-                font-size: 14px;
-            }
-
-
-            main {
-
-                padding:
-                    60px 5% 100px;
-            }
-
-
-            .page-title {
-
-                font-size: 34px;
-            }
-
-
-            .page-subtitle {
-
-                font-size: 15px;
-
-                margin-bottom: 40px;
-            }
-
-
-            .card {
-
-                width: 100%;
-
-                max-width: 400px;
-            }
-
+          padding: 18px 5%;
         }
 
+        nav h2 {
+          font-size: 19px;
+        }
+
+        nav ul {
+          gap: 18px;
+        }
+
+        nav ul li a {
+          font-size: 14px;
+        }
+
+        main {
+          padding: 60px 5% 100px;
+        }
+
+        .page-title {
+          font-size: 34px;
+        }
+
+        .page-subtitle {
+          font-size: 15px;
+
+          margin-bottom: 40px;
+        }
+
+        .card {
+          width: 100%;
+
+          max-width: 400px;
+        }
+      }
     </style>
+  </head>
 
-</head>
-
-
-<body>
-
-
+  <body>
     <!-- =========================
          NAVBAR
     ========================= -->
 
     <nav>
+      <h2>Atelier</h2>
 
-        <h2>Atelier</h2>
+      <ul>
+        <li>
+          <a href="index.php"> Home </a>
+        </li>
 
-        <ul>
-
-            <li>
-                <a href="index.php">
-                    Home
-                </a>
-            </li>
-
-            <li>
-                <a href="modules.html">
-                    Modules
-                </a>
-            </li>
-
-        </ul>
-
+        <li>
+          <a href="modules.html"> Modules </a>
+        </li>
+      </ul>
     </nav>
-
 
     <!-- =========================
          MAIN CONTENT
     ========================= -->
 
     <main>
+      <h1 class="page-title">Mon <span>Atelier</span></h1>
 
-        <h1 class="page-title">
-            Mon <span>Atelier</span>
-        </h1>
+      <p class="page-subtitle">
+        Projects and practical work completed during my training
+      </p>
 
+      <div class="cards">
+        <!-- ATELIER 1 -->
 
-        <p class="page-subtitle">
-            Projects and practical work completed during my training
-        </p>
+        <div class="card">
+          <div class="card-body">
+            <h3 class="card-title">Atelier 1</h3>
 
+            <p class="card-text">Gestion de projet : Méthodes classiques</p>
 
-        <div class="cards">
-
-
-            <!-- ATELIER 1 -->
-
-            <div class="card">
-
-                <div class="card-body">
-
-                    <h3 class="card-title">
-                        Atelier 1
-                    </h3>
-
-
-                    <p class="card-text">
-                        Gestion de projet : Méthodes classiques
-                    </p>
-
-
-                    <a
-                        href="Atelier 1.pdf"
-                        class="card-btn"
-                        target="_blank"
-                    >
-                        Open
-                    </a>
-
-                </div>
-
-            </div>
-
-            <div class="card">
-
-                <div class="card-body">
-
-                    <h3 class="card-title">
-                        Atelier 2
-                    </h3>
-
-
-                    <p class="card-text">
-                        Gestion de projet : Agile et Scrum
-                    </p>
-
-
-                    <a
-                        href="Atelier 2 Scrum & Agile (travail individuel).pdf"
-                        class="card-btn"
-                        target="_blank"
-                    >
-                        Open
-                    </a>
-
-                </div>
-
-            </div>
-
-            <div class="card">
-
-                <div class="card-body">
-
-                    <h3 class="card-title">
-                        Atelier 4
-                    </h3>
-
-
-                    <p class="card-text">
-                        Travail collaboratif
-                    </p>
-
-
-                    <a
-                        href="https://atelier-eta-blond.vercel.app/"
-                        class="card-btn"
-                        target="_blank"
-                    >
-                        Open
-                    </a>
-
-                </div>
-
-            </div>
-
-             <div class="card">
-
-                <div class="card-body">
-
-                    <h3 class="card-title">
-                        Atelier 5
-                    </h3>
-
-
-                    <p class="card-text">
-                        EFM regional (depot local)
-                    </p>
-
-
-                    <a
-                        href="https://github.com/pacizio/depot_local"
-                        class="card-btn"
-                        target="_blank"
-                    >
-                        Open
-                    </a>
-
-                </div>
-
-            </div>
-
-             <div class="card">
-
-                <div class="card-body">
-
-                    <h3 class="card-title">
-                        Atelier 6
-                    </h3>
-
-
-                    <p class="card-text">
-                        Prérequis (connection à une base de données)
-                    </p>
-
-
-                    <a
-                        href="https://atelier-6-one.vercel.app"
-                        class="card-btn"
-                        target="_blank"
-                    >
-                        Open
-                    </a>
-
-                    <a
-                        href="https://github.com/pacizio/Atelier-6.git"
-                        class="card-btn"
-                        target="_blank"
-                    >
-                        Github
-                    </a>
-
-                </div>
-
-            </div>
-
-
-            <div class="card">
-
-                <div class="card-body">
-
-                    <h3 class="card-title">
-                        Travail Collaboratif
-                    </h3>
-
-
-                    <p class="card-text">
-                        site web quick annonces
-                    </p>
-
-
-                    <a
-                        href="https://qribma.vercel.app/"
-                        class="card-btn"
-                        target="_blank"
-                    >
-                        Open
-                    </a>
-
-                    <a
-                        href="https://github.com/4phtt/Qrib.ma"
-                        class="card-btn"
-                        target="_blank"
-                    >
-                        Github
-                    </a>
-
-                </div>
-
-            </div>
-
-        
-            
-
-
+            <a href="Atelier 1.pdf" class="card-btn" target="_blank"> Open </a>
+          </div>
         </div>
 
-    </main>
+        <div class="card">
+          <div class="card-body">
+            <h3 class="card-title">Atelier 2</h3>
 
+            <p class="card-text">Gestion de projet : Agile et Scrum</p>
+
+            <a
+              href="Atelier 2 Scrum & Agile (travail individuel).pdf"
+              class="card-btn"
+              target="_blank"
+            >
+              Open
+            </a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-body">
+            <h3 class="card-title">Atelier 4</h3>
+
+            <p class="card-text">Travail collaboratif</p>
+
+            <a
+              href="https://atelier-eta-blond.vercel.app/"
+              class="card-btn"
+              target="_blank"
+            >
+              Open
+            </a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-body">
+            <h3 class="card-title">Atelier 5</h3>
+
+            <p class="card-text">EFM regional (depot local)</p>
+
+            <a
+              href="https://github.com/pacizio/depot_local"
+              class="card-btn"
+              target="_blank"
+            >
+              Open
+            </a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-body">
+            <h3 class="card-title">Atelier 6</h3>
+
+            <p class="card-text">
+              Prérequis (connection à une base de données)
+            </p>
+
+            <a
+              href="https://atelier-6-one.vercel.app"
+              class="card-btn"
+              target="_blank"
+            >
+              Open
+            </a>
+
+            <a
+              href="https://github.com/pacizio/Atelier-6.git"
+              class="card-btn"
+              target="_blank"
+            >
+              Github
+            </a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-body">
+            <h3 class="card-title">Travail Collaboratif</h3>
+
+            <p class="card-text">site web quick annonces</p>
+
+            <a
+              href="https://qribma.vercel.app/"
+              class="card-btn"
+              target="_blank"
+            >
+              Open
+            </a>
+
+            <a
+              href="https://github.com/4phtt/Qrib.ma"
+              class="card-btn"
+              target="_blank"
+            >
+              Github
+            </a>
+          </div>
+        </div>
+      </div>
+    </main>
 
     <!-- =========================
          FOOTER
     ========================= -->
 
     <footer>
-
-        <p>
-            © <?php echo date("Y"); ?> PACIZIO.
-            All rights reserved.
-        </p>
-
+      <p>© <?php echo date("Y"); ?> PACIZIO. All rights reserved.</p>
     </footer>
-
-
-</body>
-
+  </body>
 </html>
